@@ -227,46 +227,45 @@ body {
 }
 
 .left-align {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2rem;
 }
 
 .left-align::after {
-    margin: 1rem 0 0 0; 
+    margin: 1rem auto 0 auto; 
 }
 
+/* Textul principal centrat pur */
 .drop-cap-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--color-text-dark);
-    margin-bottom: 2rem;
-    text-align: left; /* Reparăm alinierea pentru a scăpa de spațiile uriașe */
+    margin-bottom: 2.5rem;
+    text-align: center; /* Adevărata centrare */
 }
 
+/* Modificăm litera ca să nu mai tragă textul la stânga */
 .drop-cap {
-    float: left;
+    float: none; /* Dezactivăm tragerea pe stânga */
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    line-height: 0.8;
-    padding-right: 0.5rem;
+    font-size: 2rem; /* O lăsăm puțin mai mare și elegantă, dar nu gigantică */
     color: var(--color-5); 
 }
 
-.drop-cap-text strong {
-    color: var(--color-text-dark);
-    font-weight: 600;
-}
-
+/* Citatul centrat simetric (fără bară pe stânga) */
 .highlight-quote-box {
     background-color: var(--color-4);
-    border-left: 4px solid var(--color-5);
-    padding: 1.5rem;
+    border: none; /* Scoatem bara laterală */
+    border-top: 2px solid var(--color-5); /* Linie elegantă sus */
+    border-bottom: 2px solid var(--color-5); /* Linie elegantă jos */
+    padding: 2rem 1rem;
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-style: italic;
     color: var(--color-text-dark);
-    border-radius: 0 8px 8px 0;
-    text-align: left; /* Reparăm alinierea și aici */
+    border-radius: 0;
+    text-align: center; /* Citat centrat perfect */
+    margin: 0 auto;
 }
 
 .about-editorial-values {
