@@ -246,14 +246,10 @@ body {
 
 /* Modificăm litera ca să nu mai tragă textul la stânga */
 .drop-cap {
-    float: none; /* Rămâne centrată împreună cu textul, nu fuge pe stânga */
-    display: inline-block;
+    float: none; /* Dezactivăm tragerea pe stânga */
     font-family: 'Playfair Display', serif;
-    font-size: 4rem; /* Am adus-o înapoi la mărimea gigantică */
-    line-height: 0.8;
-    vertical-align: bottom; /* O aliniem elegant la baza primului rând */
+    font-size: 2rem; /* O lăsăm puțin mai mare și elegantă, dar nu gigantică */
     color: var(--color-5); 
-    padding-right: 0.2rem;
 }
 
 /* Citatul centrat simetric (fără bară pe stânga) */
