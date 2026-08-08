@@ -26,43 +26,35 @@ body {
 }
 
 /* ================= HEADER SIMPLU ================= */
-/* ================= HEADER SIMPLU ================= */
 .site-header {
     background-color: var(--color-2);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
-    z-index: 1000; /* ASTA rezolvă problema cu meniul care se ascundea sub poză */
+    z-index: 1000; 
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem; /* Am tăiat din spațiul gol sus/jos ca să păstrăm bara subțire */
+    padding: 0.5rem 1rem; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .site-logo {
-    max-height: 75px; /* Un logo vizibil mai mare, dar bine proporționat */
+    max-height: 75px; 
     width: auto;
+    mix-blend-mode: multiply; /* Elimină fundalul alb al imaginii */
 }
 
+/* Structura corectă pentru meniul pe Desktop */
 .nav-links {
-        position: fixed;
-        left: -100%; 
-        top: 91px; /* Ajustat precis pentru noua înălțime a barei de sus */
-        z-index: 999; /* Ne asigurăm că meniul de pe mobil stă deasupra la orice */
-        gap: 0;
-        flex-direction: column;
-        background-color: var(--color-2);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s ease;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-        padding: 2rem 0;
-    }
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
 
 .nav-links a {
     text-decoration: none;
@@ -73,7 +65,7 @@ body {
 /* ================= HERO SECTION ================= */
 .hero-section {
     display: flex;
-    flex-direction: column-reverse; /* Pe mobil, poza sus, textul jos */
+    flex-direction: column-reverse; 
     align-items: center;
     justify-content: center;
     padding: 4rem 2rem;
@@ -91,7 +83,7 @@ body {
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    color: var(--color-5); /* Accent puternic pe titlu */
+    color: var(--color-5); 
     margin-bottom: 1rem;
 }
 
@@ -144,7 +136,6 @@ body {
     align-items: center;
 }
 
-/* Containerul care ține poza și din care pleacă valurile */
 .image-waves-wrapper {
     position: relative;
     display: inline-flex;
@@ -152,7 +143,6 @@ body {
     z-index: 1;
 }
 
-/* Generăm două valuri false în spatele pozei */
 .image-waves-wrapper::before,
 .image-waves-wrapper::after {
     content: '';
@@ -164,12 +154,10 @@ body {
     animation: rippleWave 3s infinite cubic-bezier(0.65, 0, 0.34, 1);
 }
 
-/* Valul doi are o mică întârziere */
 .image-waves-wrapper::after {
     animation-delay: 1.5s;
 }
 
-/* Animația propriu-zisă */
 @keyframes rippleWave {
     0% {
         transform: scale(1);
@@ -189,7 +177,7 @@ body {
     border: 8px solid var(--color-2); 
     box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
     position: relative;
-    z-index: 2; /* Ținem poza deasupra valurilor */
+    z-index: 2; 
 }
 
 /* Footer temporar */
@@ -222,7 +210,6 @@ body {
     background-color: var(--color-4); 
 }
 
-/* Containerul principal care dă "greutate" secțiunii */
 .about-editorial-card {
     background-color: var(--color-2); 
     border-radius: 12px;
@@ -246,7 +233,6 @@ body {
     margin: 1rem 0 0 0; 
 }
 
-/* Efectul de revistă pentru text */
 .drop-cap-text {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -268,7 +254,6 @@ body {
     font-weight: 600;
 }
 
-/* Evidențierea citatului */
 .highlight-quote-box {
     background-color: var(--color-4);
     border-left: 4px solid var(--color-5);
@@ -280,7 +265,6 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
-/* Zona valorilor */
 .about-editorial-values {
     background-color: var(--color-1); 
     padding: 3rem 2rem;
@@ -364,7 +348,8 @@ body {
     .nav-links {
         position: fixed;
         left: -100%; 
-        top: 75px; 
+        top: 91px; 
+        z-index: 999;
         gap: 0;
         flex-direction: column;
         background-color: var(--color-2);
