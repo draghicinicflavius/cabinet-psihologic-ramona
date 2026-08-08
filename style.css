@@ -241,14 +241,17 @@ body {
     line-height: 1.8;
     color: var(--color-text-dark);
     margin-bottom: 2.5rem;
-    text-align: center; /* Adevărata centrare */
+    text-align: left; 
 }
 
-/* Modificăm litera ca să nu mai tragă textul la stânga */
+/* Litera uriașă care taie două rânduri, fix ca în poză */
 .drop-cap {
-    float: none; /* Dezactivăm tragerea pe stânga */
+    float: left; /* Asta o face să se scufunde în text */
     font-family: 'Playfair Display', serif;
-    font-size: 2rem; /* O lăsăm puțin mai mare și elegantă, dar nu gigantică */
+    font-size: 4.5rem; /* Dimensiune impunătoare */
+    line-height: 0.8;
+    padding-top: 0.3rem; /* O împingem puțin în jos ca să se alinieze la fix cu rândurile */
+    padding-right: 0.5rem;
     color: var(--color-5); 
 }
 
