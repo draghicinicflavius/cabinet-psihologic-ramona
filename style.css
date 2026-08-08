@@ -26,29 +26,43 @@ body {
 }
 
 /* ================= HEADER SIMPLU ================= */
+/* ================= HEADER SIMPLU ================= */
 .site-header {
     background-color: var(--color-2);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* ASTA rezolvă problema cu meniul care se ascundea sub poză */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem; /* Am tăiat din spațiul gol sus/jos ca să păstrăm bara subțire */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .site-logo {
-    max-height: 90px;
+    max-height: 75px; /* Un logo vizibil mai mare, dar bine proporționat */
+    width: auto;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+        position: fixed;
+        left: -100%; 
+        top: 91px; /* Ajustat precis pentru noua înălțime a barei de sus */
+        z-index: 999; /* Ne asigurăm că meniul de pe mobil stă deasupra la orice */
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--color-2);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
 
 .nav-links a {
     text-decoration: none;
