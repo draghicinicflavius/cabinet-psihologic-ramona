@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cuvintele (serviciile) care vor rula pe ecran
+    
+    // ==========================================
+    // 1. EFECTUL DE SCRIERE (TYPEWRITER) - ACASĂ
+    // ==========================================
     const words = [
         "Evaluare la angajare", 
         "Aviz permis port armă", 
@@ -12,36 +15,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter-text');
     
     function typeEffect() {
+        // Dacă elementul nu există pe pagină, oprim execuția pentru a evita erori
+        if (!typewriterElement) return;
+
         const currentWord = words[wordIndex];
         
         if (isDeleting) {
-            // Șterge un caracter
             charIndex--;
         } else {
-            // Adaugă un caracter
             charIndex++;
         }
         
         typewriterElement.textContent = currentWord.substring(0, charIndex);
         
-        // Viteza de tastare
         let typeSpeed = isDeleting ? 50 : 100;
         
-        // Dacă a terminat de scris cuvântul, ia o pauză și apoi șterge
         if (!isDeleting && charIndex === currentWord.length) {
-            typeSpeed = 2000; // Pauză de 2 secunde ca să citească userul
+            typeSpeed = 2000; // Pauză înainte de a șterge
             isDeleting = true;
         } 
-        // Dacă a șters tot cuvântul, trece la următorul
         else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500; // Pauză mică înainte să înceapă noul cuvânt
+            typeSpeed = 500; // Pauză înainte de noul cuvânt
         }
         
         setTimeout(typeEffect, typeSpeed);
     }
     
-    // Pornește animația
     typeEffect();
+
+    // ==========================================
+    // 2. MENIUL HAMBURGER (MOBIL)
+    // ==========================================
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-links");
+
+    // Verificăm dacă elementele există înainte de a adăuga evenimente
+    if (hamburger && navMenu) {
+        
+        // Deschide/Închide meniul la apăsarea butonului
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Ascunde meniul automat atunci când utilizatorul dă click pe un link
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    }
 });

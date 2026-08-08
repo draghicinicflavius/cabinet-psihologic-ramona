@@ -14,12 +14,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Previne acoperirea secțiunilor de către meniul fix */
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--color-text-dark);
-    background-color: var(--color-4); /* Folosim un fundal cald de la ea */
+    background-color: var(--color-4);
 }
-
 /* ================= HEADER SIMPLU ================= */
 .site-header {
     background-color: var(--color-2);
@@ -155,5 +159,68 @@ body {
     .profile-circle {
         width: 400px;
         height: 400px;
+    }
+}
+
+/* ================= MENIU HAMBURGER (MOBIL) ================= */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text-dark);
+    transition: all 0.3s ease;
+}
+
+/* Reguli doar pentru ecrane sub 768px (Telefoane/Tablete mici) */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Ascunde meniul în afara ecranului */
+        top: 75px; /* Înălțimea aproximativă a header-ului tău */
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--color-2);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+
+    /* Clasa care se activează din JavaScript pentru a arăta meniul */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Scris puțin mai mare pe mobil ca să fie ușor de apăsat */
+    }
+
+    /* Animația de transformare a hamburger-ului în 'X' */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
