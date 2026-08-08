@@ -24,6 +24,7 @@ body {
     color: var(--color-text-dark);
     background-color: var(--color-4);
 }
+
 /* ================= HEADER SIMPLU ================= */
 .site-header {
     background-color: var(--color-2);
@@ -121,21 +122,60 @@ body {
     transform: translateY(-3px);
 }
 
-/* ================= POZA CERC ================= */
+/* ================= POZA CERC & VALURI ================= */
 .hero-image-container {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+/* Containerul care ține poza și din care pleacă valurile */
+.image-waves-wrapper {
+    position: relative;
+    display: inline-flex;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Generăm două valuri false în spatele pozei */
+.image-waves-wrapper::before,
+.image-waves-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-5);
+    z-index: -1; 
+    animation: rippleWave 3s infinite cubic-bezier(0.65, 0, 0.34, 1);
+}
+
+/* Valul doi are o mică întârziere */
+.image-waves-wrapper::after {
+    animation-delay: 1.5s;
+}
+
+/* Animația propriu-zisă */
+@keyframes rippleWave {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
 }
 
 .profile-circle {
     width: 280px;
     height: 280px;
-    object-fit: cover; /* Asigură că poza nu se distorsionează */
-    border-radius: 50%; /* Face poza perfect rotundă */
-    border: 8px solid var(--color-2); /* Bordură interioară */
-    box-shadow: 0 0 0 4px var(--color-5), /* Bordură exterioară subțire */
-                0 10px 25px rgba(0,0,0,0.1); /* Umbră de adâncime */
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 8px solid var(--color-2); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    position: relative;
+    z-index: 2; /* Ținem poza deasupra valurilor */
 }
 
 /* Footer temporar */
@@ -145,10 +185,10 @@ body {
     background-color: var(--color-2);
 }
 
-/* ================= DESKTOP ================= */
+/* ================= DESKTOP (Hero Section) ================= */
 @media (min-width: 768px) {
     .hero-section {
-        flex-direction: row; /* Pe PC, text stânga, poză dreapta */
+        flex-direction: row; 
         text-align: left;
     }
     
@@ -159,6 +199,127 @@ body {
     .profile-circle {
         width: 400px;
         height: 400px;
+    }
+}
+
+/* ================= DESPRE MINE (Editorial Card) ================= */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--color-4); 
+}
+
+/* Containerul principal care dă "greutate" secțiunii */
+.about-editorial-card {
+    background-color: var(--color-2); 
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04); 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-3);
+}
+
+.about-editorial-content {
+    padding: 3rem 2rem 2rem 2rem;
+}
+
+.left-align {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.left-align::after {
+    margin: 1rem 0 0 0; 
+}
+
+/* Efectul de revistă pentru text */
+.drop-cap-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    margin-bottom: 2rem;
+}
+
+.drop-cap {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    color: var(--color-5); 
+}
+
+.drop-cap-text strong {
+    color: var(--color-text-dark);
+    font-weight: 600;
+}
+
+/* Evidențierea citatului */
+.highlight-quote-box {
+    background-color: var(--color-4);
+    border-left: 4px solid var(--color-5);
+    padding: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-text-dark);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Zona valorilor */
+.about-editorial-values {
+    background-color: var(--color-1); 
+    padding: 3rem 2rem;
+    color: var(--color-2);
+}
+
+.values-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.elegant-values-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.elegant-values-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.value-accent {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-2);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* ================= DESKTOP (Despre Mine) ================= */
+@media (min-width: 768px) {
+    .about-editorial-card {
+        flex-direction: row; 
+    }
+
+    .about-editorial-content {
+        flex: 3;
+        padding: 4rem;
+    }
+
+    .about-editorial-values {
+        flex: 2;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
@@ -188,8 +349,8 @@ body {
 
     .nav-links {
         position: fixed;
-        left: -100%; /* Ascunde meniul în afara ecranului */
-        top: 75px; /* Înălțimea aproximativă a header-ului tău */
+        left: -100%; 
+        top: 75px; 
         gap: 0;
         flex-direction: column;
         background-color: var(--color-2);
@@ -200,7 +361,6 @@ body {
         padding: 2rem 0;
     }
 
-    /* Clasa care se activează din JavaScript pentru a arăta meniul */
     .nav-links.active {
         left: 0;
     }
@@ -210,10 +370,9 @@ body {
     }
 
     .nav-links a {
-        font-size: 1.2rem; /* Scris puțin mai mare pe mobil ca să fie ușor de apăsat */
+        font-size: 1.2rem; 
     }
 
-    /* Animația de transformare a hamburger-ului în 'X' */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }

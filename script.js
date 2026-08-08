@@ -68,4 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // ==========================================
+    // 3. ANIMAȚIE LA SCROLL (VALORI DESPRE MINE)
+    // ==========================================
+    const revealItems = document.querySelectorAll('.reveal-item');
+
+    // Setăm un observator care se uită când elementele intră pe ecran
+    const observerOptions = {
+        threshold: 0.1, // Se declanșează când se vede 10% din element
+        rootMargin: "0px 0px -50px 0px" 
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return; // Dacă nu e pe ecran, nu face nimic
+            } else {
+                // Adaugă clasa active pentru a declanșa animația din CSS
+                entry.target.classList.add('active');
+                
+                // Oprește observarea după ce a apărut o dată (ca să nu se repete la infinit)
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Aplicăm observatorul pe fiecare valoare din listă, adăugând un mic delay între ele
+    revealItems.forEach((item, index) => {
+        // Punem o întârziere (delay) crescătoare ca să apară pe rând (efect de cascadă)
+        item.style.transitionDelay = `${index * 0.15}s`;
+        appearOnScroll.observe(item);
+    });
 });
