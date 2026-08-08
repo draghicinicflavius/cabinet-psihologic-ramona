@@ -249,7 +249,7 @@ body {
     float: none; /* Rămâne centrată împreună cu textul, nu fuge pe stânga */
     display: inline-block;
     font-family: 'Playfair Display', serif;
-    font-size: 2rem; /* Am adus-o înapoi la mărimea gigantică */
+    font-size: 4rem; /* Am adus-o înapoi la mărimea gigantică */
     line-height: 0.8;
     vertical-align: bottom; /* O aliniem elegant la baza primului rând */
     color: var(--color-5); 
