@@ -151,11 +151,13 @@ body {
     border-radius: 50%;
     border: 2px solid var(--color-5);
     z-index: -1; 
-    animation: rippleWave 3s infinite cubic-bezier(0.65, 0, 0.34, 1);
+    /* Am modificat de la 3s la 6s pentru un ritm mult mai lent și relaxant */
+    animation: rippleWave 6s infinite cubic-bezier(0.65, 0, 0.34, 1);
 }
 
 .image-waves-wrapper::after {
-    animation-delay: 1.5s;
+    /* Întârzierea trebuie să fie la jumătatea duratei totale (6s / 2 = 3s) */
+    animation-delay: 3s;
 }
 
 @keyframes rippleWave {
