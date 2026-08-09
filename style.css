@@ -16,7 +16,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Previne acoperirea secțiunilor de către meniul fix */
+    scroll-padding-top: 100px; 
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 .site-logo {
     max-height: 75px; 
     width: auto;
-    mix-blend-mode: multiply; /* Elimină fundalul alb al imaginii */
+    mix-blend-mode: multiply; 
 }
 
 /* Structura corectă pentru meniul pe Desktop */
@@ -60,6 +60,11 @@ body {
     text-decoration: none;
     color: var(--color-text-dark);
     font-weight: 600;
+}
+
+/* Ascundem elementele de meniu mobil pe ecrane mari */
+.mobile-extra {
+    display: none;
 }
 
 /* ================= HERO SECTION ================= */
@@ -151,13 +156,11 @@ body {
     border-radius: 50%;
     border: 2px solid var(--color-5);
     z-index: -1; 
-    /* Am modificat de la 3s la 6s pentru un ritm mult mai lent și relaxant */
     animation: rippleWave 7s infinite cubic-bezier(0.65, 0, 0.34, 1);
 }
 
 .image-waves-wrapper::after {
-    /* Întârzierea trebuie să fie la jumătatea duratei totale (6s / 2 = 3s) */
-    animation-delay: 3s;
+    animation-delay: 3.5s;
 }
 
 @keyframes rippleWave {
@@ -182,13 +185,6 @@ body {
     z-index: 2; 
 }
 
-/* Footer temporar */
-.site-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--color-2);
-}
-
 /* ================= DESKTOP (Hero Section) ================= */
 @media (min-width: 768px) {
     .hero-section {
@@ -206,7 +202,7 @@ body {
     }
 }
 
-/* ================= DESPRE MINE (Editorial Card) ================= */
+/* ================= DESPRE MINE ================= */
 .about-section {
     padding: 6rem 0;
     background-color: var(--color-4); 
@@ -235,7 +231,6 @@ body {
     margin: 1rem auto 0 auto; 
 }
 
-/* Textul principal centrat pur */
 .drop-cap-text {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -244,30 +239,28 @@ body {
     text-align: left; 
 }
 
-/* Litera uriașă care taie două rânduri, fix ca în poză */
 .drop-cap {
-    float: left; /* Asta o face să se scufunde în text */
+    float: left; 
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem; /* Dimensiune impunătoare */
+    font-size: 4.5rem; 
     line-height: 0.8;
-    padding-top: 0.3rem; /* O împingem puțin în jos ca să se alinieze la fix cu rândurile */
+    padding-top: 0.3rem; 
     padding-right: 0.5rem;
     color: var(--color-5); 
 }
 
-/* Citatul centrat simetric (fără bară pe stânga) */
 .highlight-quote-box {
     background-color: var(--color-4);
-    border: none; /* Scoatem bara laterală */
-    border-top: 2px solid var(--color-5); /* Linie elegantă sus */
-    border-bottom: 2px solid var(--color-5); /* Linie elegantă jos */
+    border: none; 
+    border-top: 2px solid var(--color-5); 
+    border-bottom: 2px solid var(--color-5); 
     padding: 2rem 1rem;
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-style: normal;
     color: var(--color-text-dark);
     border-radius: 0;
-    text-align: center; /* Citat centrat perfect */
+    text-align: center; 
     margin: 0 auto;
 }
 
@@ -307,7 +300,6 @@ body {
     margin-right: 1rem;
 }
 
-/* ================= DESKTOP (Despre Mine) ================= */
 @media (min-width: 768px) {
     .about-editorial-card {
         flex-direction: row; 
@@ -327,11 +319,10 @@ body {
     }
 }
 
-
 /* ================= SERVICII ================= */
 .services-section {
     padding: 6rem 2rem;
-    background-color: var(--color-2); /* Fundal curat */
+    background-color: var(--color-2); 
 }
 
 .services-container {
@@ -348,7 +339,6 @@ body {
     margin: 1rem auto 0 auto;
 }
 
-/* Grila pentru chenarele de avize */
 .avize-grid {
     display: flex;
     flex-direction: column;
@@ -356,16 +346,14 @@ body {
     margin-bottom: 5rem;
 }
 
-/* Chenarul cerut de clientă (margini gri de culoarea textului) */
 .aviz-card {
     flex: 1;
-    border: 2px solid var(--color-text-dark); /* Chenar gri închis */
+    border: 2px solid var(--color-text-dark); 
     padding: 2.5rem 2rem;
     background-color: var(--color-4);
-    border-radius: 8px; /* Un pic rotunjit la colțuri pentru eleganță */
+    border-radius: 8px; 
 }
 
-/* Titlurile portocalii, exact cum a cerut */
 .aviz-title {
     color: #E65C00;
     font-family: 'Playfair Display', serif;
@@ -375,7 +363,6 @@ body {
     line-height: 1.4;
 }
 
-/* Stil pentru listele din chenare */
 .custom-list {
     list-style: none;
     color: var(--color-text-dark);
@@ -388,29 +375,27 @@ body {
     font-weight: 500;
 }
 
-/* Bifă / Punct portocaliu pentru liste */
 .custom-list li::before {
     content: '✓';
-    color: #E65C00; /* Schimbat și aici */
+    color: #E65C00; 
     position: absolute;
     left: 0;
     font-weight: bold;
 }
 
-/* ================= CONSILIERE (Fără Chenar) ================= */
+/* ================= CONSILIERE ================= */
 .consiliere-wrapper {
     padding: 2rem 0;
     text-align: center;
 }
 
 .consiliere-title {
-    color: #E65C00; /* Schimbat din piersică în portocaliu intens */
+    color: #E65C00; 
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 3rem;
 }
 
-/* Aranjăm lista pe două coloane pe ecrane mari, să nu fie un cârnat lung de text */
 .consiliere-list {
     list-style: none;
     color: var(--color-text-dark);
@@ -433,21 +418,27 @@ body {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background-color: #E65C00; /* Schimbat și aici */
+    background-color: #E65C00; 
     border-radius: 50%;
     margin-right: 1rem;
     flex-shrink: 0;
 }
 
-/* ================= DESKTOP PENTRU SERVICII ================= */
 @media (min-width: 768px) {
     .avize-grid {
-        flex-direction: row; /* Pe PC, chenarele stau stânga-dreapta */
+        flex-direction: row; 
     }
     
     .consiliere-list {
-        grid-template-columns: 1fr 1fr; /* Lista de consiliere se împarte pe 2 coloane */
+        grid-template-columns: 1fr 1fr; 
     }
+}
+
+/* Footer temporar */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-2);
 }
 
 /* ================= MENIU HAMBURGER (MOBIL) ================= */
@@ -468,25 +459,28 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Reguli doar pentru ecrane sub 768px (Telefoane/Tablete mici) */
 @media (max-width: 767px) {
     .hamburger {
         display: block;
+        position: relative;
+        z-index: 1002; /* Ține butonul X vizibil peste meniul full-screen */
     }
 
     .nav-links {
         position: fixed;
         left: -100%; 
-        top: 91px; 
-        z-index: 999;
+        top: 0; /* Pornește de sus, acoperind bara header-ului și logo 1 */
+        z-index: 1001; /* Acoperă header-ul (1000) dar rămâne sub hamburger (1002) */
         gap: 0;
         flex-direction: column;
         background-color: var(--color-2);
         width: 100%;
+        height: 100vh; 
+        overflow-y: auto; 
+        padding-bottom: 6rem; 
         text-align: center;
         transition: 0.3s ease;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-        padding: 2rem 0;
+        padding-top: 6rem; /* Lasă spațiu sus pentru a nu acoperi X-ul */
     }
 
     .nav-links.active {
@@ -501,6 +495,70 @@ body {
         font-size: 1.2rem; 
     }
 
+    /* Elementele adăugate exclusiv pentru meniul mobil */
+    .mobile-extra {
+        display: block;
+    }
+
+    /* Stil Logo pe mobil (Logo 2 mare și rotund) */
+    .mobile-logo-box {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mobile-logo-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #E65C00; /* Margine elegantă portocalie */
+        background-color: var(--color-2);
+        padding: 5px; /* Un mic spațiu ca să respire logo-ul înăuntru */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    /* Stil Butonul de programare */
+    .mobile-btn-box {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-mobile-cta {
+        display: inline-block;
+        background-color: #E65C00;
+        color: var(--color-2) !important;
+        padding: 0.8rem 2rem;
+        border-radius: 8px; 
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    /* Stil Iconițele rotunde pe același rând */
+    .mobile-social-box {
+        display: flex;
+        flex-direction: row; /* Forțează așezarea orizontală */
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .social-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background-color: var(--color-4);
+        border: 2px solid var(--color-text-dark);
+        border-radius: 50%;
+        color: var(--color-text-dark) !important;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* Animația pentru Hamburger */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
