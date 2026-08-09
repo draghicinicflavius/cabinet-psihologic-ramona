@@ -264,7 +264,7 @@ body {
     padding: 2rem 1rem;
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    font-style: italic;
+    font-style: normal;
     color: var(--color-text-dark);
     border-radius: 0;
     text-align: center; /* Citat centrat perfect */
@@ -324,6 +324,129 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+
+/* ================= SERVICII ================= */
+.services-section {
+    padding: 6rem 2rem;
+    background-color: var(--color-2); /* Fundal curat */
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.text-center::after {
+    margin: 1rem auto 0 auto;
+}
+
+/* Grila pentru chenarele de avize */
+.avize-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+/* Chenarul cerut de clientă (margini gri de culoarea textului) */
+.aviz-card {
+    flex: 1;
+    border: 2px solid var(--color-text-dark); /* Chenar gri închis */
+    padding: 2.5rem 2rem;
+    background-color: var(--color-4);
+    border-radius: 8px; /* Un pic rotunjit la colțuri pentru eleganță */
+}
+
+/* Titlurile portocalii, exact cum a cerut */
+.aviz-title {
+    color: #E65C00;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+/* Stil pentru listele din chenare */
+.custom-list {
+    list-style: none;
+    color: var(--color-text-dark);
+}
+
+.custom-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+}
+
+/* Bifă / Punct portocaliu pentru liste */
+.custom-list li::before {
+    content: '✓';
+    color: #E65C00; /* Schimbat și aici */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ================= CONSILIERE (Fără Chenar) ================= */
+.consiliere-wrapper {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.consiliere-title {
+    color: #E65C00; /* Schimbat din piersică în portocaliu intens */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+/* Aranjăm lista pe două coloane pe ecrane mari, să nu fie un cârnat lung de text */
+.consiliere-list {
+    list-style: none;
+    color: var(--color-text-dark);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.consiliere-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.list-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #E65C00; /* Schimbat și aici */
+    border-radius: 50%;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+/* ================= DESKTOP PENTRU SERVICII ================= */
+@media (min-width: 768px) {
+    .avize-grid {
+        flex-direction: row; /* Pe PC, chenarele stau stânga-dreapta */
+    }
+    
+    .consiliere-list {
+        grid-template-columns: 1fr 1fr; /* Lista de consiliere se împarte pe 2 coloane */
     }
 }
 
