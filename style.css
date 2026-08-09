@@ -543,6 +543,164 @@ body {
     background-color: var(--color-2);
 }
 
+/* ================= CONTACT ================= */
+.contact-section {
+    padding: 6rem 2rem;
+    background-color: var(--color-4); /* Alternăm fundalul ca să delimităm vizual secțiunea */
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Partea de text și date de contact */
+.contact-info {
+    flex: 1;
+}
+
+.left-align-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-5);
+    margin: 1rem 0 2rem 0;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    margin-bottom: 3rem;
+}
+
+.contact-details-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    padding: 1rem;
+    background-color: var(--color-2);
+    border: 1px solid var(--color-3);
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+    border-color: var(--color-5);
+}
+
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-5);
+    color: var(--color-2);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.contact-value {
+    display: block;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Partea de formular */
+.contact-form-wrapper {
+    flex: 1;
+    background-color: var(--color-2);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-3);
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--color-5);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-3);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background-color: var(--color-4);
+    transition: border-color 0.3s ease, outline 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--color-5);
+    background-color: var(--color-2);
+}
+
+.form-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1.2rem;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
+}
+
+/* ================= DESKTOP PENTRU CONTACT ================= */
+@media (min-width: 768px) {
+    .contact-grid {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
 /* ================= MENIU HAMBURGER (MOBIL) ================= */
 .hamburger {
     display: none;

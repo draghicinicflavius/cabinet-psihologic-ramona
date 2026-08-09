@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. EFECTUL DE SCRIERE (TYPEWRITER) - ACASĂ
     // ==========================================
     const words = [
-        "Evaluare la angajare.", 
+        "Aviz psihologic angajare/control periodic.", 
         "Aviz permis port armă.", 
         "Dezvoltare personală."
     ];
