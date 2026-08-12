@@ -343,7 +343,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 5rem; /* Păstrăm spațiul până la bannerul comun */
 }
 
 .aviz-card {
@@ -391,40 +391,91 @@ body {
     font-weight: bold;
 }
 
-/* Stiluri pentru casetele cu informații și preț (Sub liste) */
-.aviz-info {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-3); 
-    font-size: 0.95rem;
-    color: var(--color-text-dark);
-    line-height: 1.6;
-}
-
-.aviz-info p {
-    margin-bottom: 0.8rem;
-}
-
-.info-important {
-    margin-top: 1.5rem;
+/* ================= BANNER COMUN EVALUARE ================= */
+.evaluare-comuna-box {
     background-color: var(--color-2);
-    border-left: 4px solid var(--color-5);
-    padding: 1rem;
-    border-radius: 0 6px 6px 0;
+    border: 1px solid var(--color-3);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
-.info-important strong {
-    display: block;
-    margin-bottom: 0.5rem;
+.evaluare-text, .evaluare-pasi {
+    flex: 1;
+}
+
+.evaluare-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     color: var(--color-5);
+    margin-bottom: 1.5rem;
 }
 
-.simple-list {
+.evaluare-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.evaluare-pasi h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Transformăm pașii plictisitori într-o listă modernă cu numere */
+.pasi-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.simple-list li {
-    margin-bottom: 0.3rem;
+.pasi-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.pas-numar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-5);
+    color: var(--color-2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Pe desktop (PC), punem textul în stânga și pașii în dreapta */
+@media (min-width: 768px) {
+    .evaluare-comuna-box {
+        flex-direction: row;
+        align-items: center;
+        padding: 4rem;
+    }
+    
+    .evaluare-text {
+        padding-right: 2rem;
+        border-right: 1px solid var(--color-3); /* O linie fină despărțitoare */
+    }
+    
+    .evaluare-pasi {
+        padding-left: 2rem;
+    }
 }
 
 /* ================= CONSILIERE ================= */
@@ -494,36 +545,27 @@ body {
     line-height: 1.7;
 }
 
-/* Caseta de final Contact din Word */
-.consiliere-contact-box {
+/* Caseta cu linia laterală (pentru textul mutat) */
+.consiliere-quote-box {
     max-width: 800px;
-    margin: 3rem auto 0 auto;
-    padding: 2rem;
+    margin: 2rem auto 3rem auto;
     background-color: var(--color-2);
-    border: 1px solid var(--color-3);
-    border-radius: 8px;
-    text-align: center;
+    border-left: 4px solid var(--color-5); /* Linia laterală nuanța peach */
+    padding: 1.5rem 2rem;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
 }
 
-.consiliere-contact-box h4 {
-    color: var(--color-5);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif;
-}
-
-.contact-divider {
-    border: none;
-    height: 1px;
-    background-color: var(--color-3);
-    width: 50%;
-    margin: 1.5rem auto;
-}
-
-.consiliere-contact-box p {
-    margin-bottom: 1rem;
+.consiliere-quote-box p {
     font-size: 1.05rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-dark);
+    font-style: normal; /* Forțăm textul să fie normal, fără italic */
+}
+
+.consiliere-quote-box p:last-child {
+    margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -627,6 +669,9 @@ body {
     display: block;
     font-weight: 600;
     font-size: 1.1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* Partea de formular */
