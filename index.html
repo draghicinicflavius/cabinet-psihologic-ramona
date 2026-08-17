@@ -269,12 +269,54 @@
     </main>
 
     <!-- Footer adăugat scurt pentru structură -->
+    <!-- ================= FOOTER COMPLET & LEGAL ================= -->
     <footer class="site-footer">
-        <div class="developer-credit">
-            <p><small>Dezvoltat de FLAtech - by Flavius Draghici</small></p>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Termeni și Condiții</a>
+                <a href="#">Politică de Confidențialitate</a>
+                <a href="#">Politică de Cookie-uri</a>
+                <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer" class="anpc-link">ANPC - SAL</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2026 Ramona Moraru - Cabinet de Psihologie. Toate drepturile rezervate.</p>
+            </div>
+            
+            <div class="developer-credit">
+                <p><small>Dezvoltat de FLAtech - by Flavius Draghici</small></p>
+            </div>
         </div>
     </footer>
 
+    <!-- ================= BANNER COOKIE-URI ================= -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare cât mai bună. Continuând să utilizați site-ul, sunteți de acord cu <a href="#">Politica de Cookie-uri</a>.</p>
+            <button id="accept-cookies" class="btn-primary cookie-btn">Am înțeles</button>
+        </div>
+    </div>
+
+    <!-- Script simplu pentru a închide bannerul de cookies -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            // Verificăm dacă utilizatorul a acceptat deja
+            if (!localStorage.getItem("cookiesAccepted")) {
+                cookieBanner.style.display = "block";
+            }
+
+            acceptBtn.addEventListener("click", function() {
+                localStorage.setItem("cookiesAccepted", "true");
+                cookieBanner.style.display = "none";
+            });
+        });
+    </script>
+
     <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>

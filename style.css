@@ -578,11 +578,112 @@ body {
     }
 }
 
-/* Footer temporar */
+/* ================= FOOTER COMPLET ================= */
 .site-footer {
-    text-align: center;
-    padding: 2rem;
     background-color: var(--color-2);
+    border-top: 1px solid var(--color-3);
+    padding: 3rem 2rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-5);
+}
+
+.anpc-link {
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.developer-credit {
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-3);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* ================= BANNER COOKIE-URI ================= */
+.cookie-banner {
+    display: none; /* Este ascuns implicit, arătat prin JS dacă nu e acceptat */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-text-dark);
+    color: var(--color-2);
+    padding: 1.5rem;
+    z-index: 9999;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+.cookie-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cookie-content a {
+    color: var(--color-5);
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    padding: 0.6rem 2rem;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-5);
+    color: var(--color-2);
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .cookie-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
 /* ================= CONTACT ================= */
