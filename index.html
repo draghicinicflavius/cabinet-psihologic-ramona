@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramona Moraru | Psiholog</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <!-- Librăria FontAwesome pentru iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,9 +43,10 @@
                     <a href="#contact" class="btn-mobile-cta">Fă o programare!</a>
                 </li>
                 <li class="mobile-extra mobile-social-box">
-                    <a href="#" class="social-circle">f</a>
-                    <a href="#" class="social-circle">✉</a>
-                    <a href="#" class="social-circle">✆</a>
+                    <!-- Buton Apelare Directă -->
+                    <a href="tel:0735292220" class="social-circle" title="Sună"><i class="fa-solid fa-phone"></i></a>
+                    <!-- Buton WhatsApp (Deschide chat-ul direct) -->
+                    <a href="https://wa.me/40735292220" class="social-circle" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </li>
             </ul>
         </nav>
@@ -213,7 +216,6 @@
         </section>
 
         <!-- ================= CONTACT ================= -->
-        <!-- ================= CONTACT ================= -->
         <section id="contact" class="contact-section">
             <div class="contact-container">
                 <div class="contact-grid">
@@ -223,10 +225,10 @@
                         <h2 class="section-title left-align" style="text-align: left;">Hai să stăm de vorbă</h2>
                         <div class="left-align-line"></div>
                         
-                        <!-- Textul a fost mutat în secțiunea de Consiliere. Au rămas direct detaliile -->
                         <div class="contact-details-box">
                             <a href="tel:0735292220" class="contact-item">
-                                <div class="contact-icon">✆</div>
+                                <!-- Iconiță profesională de telefon -->
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                                 <div>
                                     <span class="contact-label">Sună sau scrie pe WhatsApp</span>
                                     <span class="contact-value">0735 292 220</span>
@@ -234,7 +236,8 @@
                             </a>
 
                             <a href="mailto:psihologramonamoraru@gmail.com" class="contact-item">
-                                <div class="contact-icon">✉</div>
+                                <!-- Iconiță profesională de email -->
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div>
                                     <span class="contact-label">Trimite un email</span>
                                     <span class="contact-value">psihologramonamoraru@gmail.com</span>
@@ -246,18 +249,19 @@
                     <!-- Partea Dreaptă: Formular Profesional -->
                     <div class="contact-form-wrapper">
                         <h3 class="form-title">Programează o discuție</h3>
-                        <form class="contact-form">
+                        <!-- Formspree Integrat Aici -->
+                        <form action="https://formspree.io/f/moeakzqd" method="POST" class="contact-form">
                             <div class="input-group">
                                 <label for="nume">Numele tău</label>
-                                <input type="text" id="nume" placeholder="Ex: Popescu Maria" required>
+                                <input type="text" id="nume" name="Nume" placeholder="Ex: Popescu Maria" required>
                             </div>
                             <div class="input-group">
                                 <label for="telefon">Telefon</label>
-                                <input type="tel" id="telefon" placeholder="07xx xxx xxx" required>
+                                <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required>
                             </div>
                             <div class="input-group">
                                 <label for="mesaj">Cu ce te pot ajuta? (Opțional)</label>
-                                <textarea id="mesaj" rows="4" placeholder="Scrie aici un scurt mesaj..."></textarea>
+                                <textarea id="mesaj" name="Mesaj" rows="4" placeholder="Scrie aici un scurt mesaj..."></textarea>
                             </div>
                             <button type="submit" class="btn-primary form-btn">Trimite Mesajul</button>
                         </form>
@@ -268,8 +272,6 @@
         </section>
     </main>
 
-    <!-- Footer adăugat scurt pentru structură -->
-    <!-- ================= FOOTER COMPLET & LEGAL ================= -->
     <!-- ================= FOOTER COMPLET ================= -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -280,7 +282,7 @@
                 <a href="#">Politică de Cookie-uri</a>
             </div>
             
-          <!-- Siglele oficiale ANPC -->
+            <!-- Siglele oficiale ANPC -->
             <div class="anpc-banners">
                 <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer">
                     <img src="images/anpc-sal.png" alt="Soluționarea Alternativă a Litigiilor" class="anpc-img">
@@ -327,7 +329,5 @@
     </script>
 
     <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
