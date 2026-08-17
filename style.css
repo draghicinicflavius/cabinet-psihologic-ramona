@@ -998,3 +998,37 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+/* ================= CORECTARE ALINIERE TEXTE (ASPECT TIPOGRAFIC PROFESIONAL) ================= */
+
+/* 1. Aliniem perfect stânga-dreapta (Justify) toate calupurile mari de text */
+.consiliere-intro-text,
+.consiliere-outro-text p,
+.consiliere-quote-box p,
+.drop-cap-text,
+.highlight-quote-box,
+.evaluare-text p {
+    text-align: justify !important;
+    text-justify: inter-word;
+    /* Adăugăm un pic de spațiu între linii ca textul justificat să respire și să fie ușor de citit */
+    line-height: 1.8 !important; 
+}
+
+/* 2. Ne asigurăm că și listele sunt centrate perfect pe ecran, fără să pară aruncate */
+.consiliere-wrapper, 
+.evaluare-pasi {
+    text-align: center !important;
+}
+
+/* 3. Menținem elementele listei aliniate frumos dedesubtul titlului centrat */
+.consiliere-list {
+    display: inline-grid; /* Ține grila compactă pe centru */
+    margin: 0 auto;
+    text-align: left; /* Păstrăm bulinele aliniate între ele, dar blocul stă pe centru */
+}
+
+@media (min-width: 768px) {
+    .consiliere-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 3rem;
+    }
+}
