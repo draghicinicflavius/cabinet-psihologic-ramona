@@ -1026,6 +1026,47 @@ body {
     text-align: left; /* Păstrăm bulinele aliniate între ele, dar blocul stă pe centru */
 }
 
+/* ================= PAGINI LEGALE ================= */
+.legal-page-header {
+    background-color: var(--color-2);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--color-3);
+    text-align: center;
+}
+.legal-section {
+    padding: 4rem 2rem;
+    background-color: var(--color-2);
+}
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-dark);
+}
+.legal-container h1 {
+    color: var(--color-5);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.legal-container h2 {
+    color: var(--color-5);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.legal-container p, .legal-container li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+.legal-container ul {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 @media (min-width: 768px) {
     .consiliere-list {
         grid-template-columns: 1fr 1fr;
