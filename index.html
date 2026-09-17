@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Descriere adăugată pentru SEO (Google) -->
+    
+    <!-- ================= SEO & OPEN GRAPH ================= -->
     <meta name="description" content="Cabinet de Psihologie Ramona Moraru. Servicii de evaluare psihologică (psihologia muncii, port armă) și consiliere pentru dezvoltare personală.">
+    <meta property="og:title" content="Cabinet Psihologic | Ramona Moraru">
+    <meta property="og:description" content="Servicii de evaluare psihologică și consiliere pentru dezvoltare personală.">
+    <!-- Când domeniul oficial este gata, schimbă link-ul de mai jos cu cel real -->
+    <meta property="og:image" content="https://www.ramonamoraru.ro/images/logo1.jpeg">
+    <meta property="og:url" content="https://www.ramonamoraru.ro/">
+    <meta property="og:type" content="website">
+
     <title>Ramona Moraru | Psiholog</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo2.jpeg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-    <!-- Librăria FontAwesome pentru iconițe -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- ================= GOOGLE CONSENT MODE ================= -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Verificăm dacă există deja consimțământul în memorie
+        var isConsentGranted = localStorage.getItem("cookiesAccepted") === "true";
+
+        // Setăm starea implicită pentru GTM
+        gtag('consent', 'default', {
+            'ad_storage': isConsentGranted ? 'granted' : 'denied',
+            'analytics_storage': isConsentGranted ? 'granted' : 'denied'
+        });
+    </script>
+    <!-- AICI VA VENI SCRIPTUL DE GOOGLE TAG MANAGER DE LA COLEGUL TĂU -->
+
 </head>
 <body>
 
@@ -17,12 +45,10 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#acasa">
-                    <!-- Pune imaginea ta aici -->
                     <img src="images/logo1.jpeg" alt="Logo Ramona Moraru" class="site-logo">
                 </a>
             </div>
             
-            <!-- Butonul Hamburger Nou -->
             <button class="hamburger" aria-label="Deschide meniul">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -30,7 +56,6 @@
             </button>
 
             <ul class="nav-links">
-                <!-- Partea de sus a meniului pe mobil (Logo) -->
                 <li class="mobile-extra mobile-logo-box">
                     <img src="images/logo2.jpeg" alt="Logo Ramona Moraru" class="mobile-logo-img">
                 </li>
@@ -40,14 +65,11 @@
                 <li><a href="#servicii">Servicii</a></li>
                 <li><a href="#contact">Contact</a></li>
                 
-                <!-- Partea de jos a meniului pe mobil (Buton + Socials) -->
                 <li class="mobile-extra mobile-btn-box">
                     <a href="#contact" class="btn-mobile-cta">Fă o programare!</a>
                 </li>
                 <li class="mobile-extra mobile-social-box">
-                    <!-- Buton Apelare Directă -->
                     <a href="tel:0735292220" class="social-circle" title="Sună"><i class="fa-solid fa-phone"></i></a>
-                    <!-- Buton WhatsApp (Deschide chat-ul direct) -->
                     <a href="https://wa.me/40735292220" class="social-circle" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </li>
             </ul>
@@ -57,10 +79,8 @@
     <main>
         <section id="acasa" class="hero-section">
             <div class="hero-content">
-                <!-- H1 Optimizat pentru SEO (înlocuiește "Bine ai venit!") -->
                 <h1>Cabinet Psihologic</h1>
                 <p class="hero-intro">Sunt Ramona Moraru și te pot ajuta cu:</p>
-                <!-- Aici se va întâmpla magia cu textul care se schimbă -->
                 <div class="animated-text-container">
                     <span id="typewriter-text" class="typewriter"></span><span class="cursor">|</span>
                 </div>
@@ -68,9 +88,7 @@
             </div>
             
             <div class="hero-image-container">
-                <!-- Wrapper-ul nou adăugat pentru efectul de valuri -->
                 <div class="image-waves-wrapper">
-                    <!-- Înlocuiește cu poza ei reală -->
                     <img src="images/ramona-profil.jpeg" alt="Portret Ramona Moraru" class="profile-circle">
                 </div>
             </div>
@@ -113,10 +131,8 @@
             <div class="services-container">
                 <h2 class="section-title text-center">Servicii</h2>
 
-                <!-- Partea 1: Avizele (În chenare separate - curățate de textul repetitiv) -->
                 <div class="avize-grid">
                     
-                    <!-- Chenar 1: Psihologia Muncii -->
                     <div class="aviz-card">
                         <h3 class="aviz-title">Psihologia muncii- aviz psihologic angajare/control periodic/menținere funcție/schimbare funcție</h3>
                         <ul class="custom-list">
@@ -143,7 +159,6 @@
                         </ul>
                     </div>
 
-                    <!-- Chenar 2: Psihologie Aplicată -->
                     <div class="aviz-card">
                         <h3 class="aviz-title">Psihologie aplicată în domeniul securității naționale:<br><small class="title-subtitle">Aviz psihologic port armă-angajare/întocmire dosar de obținere a permisului de port armă/ periodic</small></h3>
                         <ul class="custom-list">
@@ -162,7 +177,6 @@
 
                 </div>
 
-                <!-- Partea 1.5: Bannerul Comun pentru Evaluări (Soluția Elegantă) -->
                 <div class="evaluare-comuna-box">
                     <div class="evaluare-text">
                         <h4>Informații și Costuri</h4>
@@ -182,7 +196,6 @@
                     </div>
                 </div>
 
-                <!-- Partea 2: Consiliere -->
                 <div class="consiliere-wrapper">
                     <h3 class="consiliere-title">CONSILIERE PENTRU DEZVOLTARE PERSONALĂ</h3>
                     
@@ -223,14 +236,12 @@
             <div class="contact-container">
                 <div class="contact-grid">
                     
-                    <!-- Partea Stângă: Informații și Date Contact -->
                     <div class="contact-info">
                         <h2 class="section-title left-align" style="text-align: left;">Hai să stăm de vorbă</h2>
                         <div class="left-align-line"></div>
                         
                         <div class="contact-details-box">
                             <a href="tel:0735292220" class="contact-item">
-                                <!-- Iconiță profesională de telefon -->
                                 <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                                 <div>
                                     <span class="contact-label">Sună sau scrie pe WhatsApp</span>
@@ -239,7 +250,6 @@
                             </a>
 
                             <a href="mailto:psihologramonamoraru@gmail.com" class="contact-item">
-                                <!-- Iconiță profesională de email -->
                                 <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div>
                                     <span class="contact-label">Trimite un email</span>
@@ -249,10 +259,8 @@
                         </div>
                     </div>
 
-                    <!-- Partea Dreaptă: Formular Profesional -->
                     <div class="contact-form-wrapper">
                         <h3 class="form-title">Programează o discuție</h3>
-                        <!-- Formspree Integrat Aici -->
                         <form action="https://formspree.io/f/moeakzqd" method="POST" class="contact-form">
                             <div class="input-group">
                                 <label for="nume">Numele tău</label>
@@ -279,13 +287,11 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <!-- Butoanele legate acum către paginile de politici HTML -->
                 <a href="termeni.html">Termeni și Condiții</a>
                 <a href="confidentialitate.html">Politică de Confidențialitate</a>
                 <a href="confidentialitate.html#13">Politică de Cookie-uri</a>
             </div>
             
-            <!-- Siglele oficiale ANPC -->
             <div class="anpc-banners">
                 <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer">
                     <img src="images/anpc-sal.png" alt="Soluționarea Alternativă a Litigiilor" class="anpc-img">
@@ -313,20 +319,32 @@
         </div>
     </div>
 
-    <!-- Script simplu pentru a închide bannerul de cookies -->
+    <!-- Script funcțional pentru banner și Consent Mode -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const cookieBanner = document.getElementById("cookie-banner");
             const acceptBtn = document.getElementById("accept-cookies");
 
-            // Verificăm dacă utilizatorul a acceptat deja
+            // Afișăm bannerul doar dacă nu există acordul salvat
             if (!localStorage.getItem("cookiesAccepted")) {
                 cookieBanner.style.display = "block";
             }
 
             acceptBtn.addEventListener("click", function() {
+                // 1. Ascundem bannerul și salvăm decizia în browser
                 localStorage.setItem("cookiesAccepted", "true");
                 cookieBanner.style.display = "none";
+
+                // 2. Transmitem semnalul activ către Google Tag Manager
+                if(typeof gtag === 'function') {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'analytics_storage': 'granted'
+                    });
+                }
+
+                // 3. Trimitem un eveniment personalizat în dataLayer pentru a declanșa codurile instant
+                window.dataLayer.push({'event': 'cookies_accepted'});
             });
         });
     </script>
