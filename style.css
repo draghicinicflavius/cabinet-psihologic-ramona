@@ -625,11 +625,52 @@ body {
 }
 
 .developer-credit {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     font-family: 'Montserrat', sans-serif;
-    color: var(--color-3);
+    color: #666;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
+}
+
+.developer-credit p {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.flatech-link {
+    color: var(--color-text-dark);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.flatech-link:hover {
+    color: var(--color-5);
+}
+
+.flatech-btn {
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--color-2);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-3);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.flatech-btn:hover {
+    background: var(--color-5);
+    color: #fff;
+    border-color: var(--color-5);
+    box-shadow: 0 2px 6px rgba(251, 172, 130, 0.4);
+    transform: translateY(-1px);
 }
 /* ================= BANNERE ANPC ================= */
 .anpc-banners {
